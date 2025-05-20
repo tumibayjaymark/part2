@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To the Love of My Life</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff0f5;
+      color: #4a1c40;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #c2185b;
+      margin-bottom: 10px;
+    }
+    .section {
+      margin: 40px 0;
+    }
+    .section h3 {
+      color: #d81b60;
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.6em;
+    }
+    p {
+      font-size: 1.15em;
+      line-height: 1.6;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+    .photo {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .photo img {
+      width: 200px;
+      border-radius: 15px;
+      border: 4px solid #ffe4ec;
+    }
+    .audio-player {
+      text-align: center;
+    }
+    .audio-player audio {
+      width: 90%;
+      max-width: 600px;
+    }
+    video {
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .gallery img {
+      width: 160px;
+      border-radius: 10px;
+      border: 3px solid #ffcce6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To the Love of My Life</h1>
+    <h2>You mean everything to me 💖</h2>
+
+    <!-- 🔈 Background Music (auto-plays after user interaction) -->
+    <audio id="backgroundMusic" src="jxx/Tanging Dahilan (lyrics) - Belle Mariano.mp3" loop></audio>
+
+    <div class="section" id="message">
+      <h3>💌 My Message to You</h3>
+      <p>
+        <!-- [Your love message here] -->
+        From the moment our paths crossed, my world has been painted in brighter colors and sweeter melodies. You are the light that fills my days with hope and my nights with peace. Loving you feels like waking up to the most beautiful sunrise—warm, promising, and full of endless possibilities. Each day with you is a gift I cherish deeply, and I want to take this moment to tell you just how much you mean to me.
+
+Your presence in my life has transformed the ordinary into the extraordinary. The way your smile lights up a room, how your laughter dances in the air, and the kindness that flows from your heart remind me every day why I am so incredibly lucky to have you. You are my confidant, my partner, my best friend, and my greatest love all wrapped into one. With you, I feel safe to be my true self—flaws, dreams, hopes, and all.
+
+Love is often described in grand gestures and poetic words, but with you, it is also found in the little things. The way you listen to me when I need to talk, the gentle touch of your hand, the quiet moments we share just being close—these are the treasures I hold dear. Your love teaches me patience, compassion, and the beauty of giving without expecting anything in return. You inspire me to grow and to become a better version of myself every day.
+
+Sometimes I find myself lost in thought, overwhelmed by how profoundly you have changed my life. You have shown me that love is not just about passion but about deep understanding and unwavering support. In your eyes, I see a future filled with dreams we can build together, memories we will create, and challenges we will overcome side by side. Knowing that you believe in me makes me feel unstoppable, ready to face whatever life throws our way.
+
+I want to thank you for being you—authentic, loving, and endlessly generous. Your heart is a rare and precious gift, and I promise to cherish and protect it always. Even when life feels uncertain, I find comfort in knowing that I have you by my side. You are my anchor in the storm, my shelter in the rain, and the reason my heart beats with joy every single day.
+
+As I write these words, I realize that no message could ever truly capture the depth of my feelings for you. Love is something we live and breathe, not just something we say. But I hope this message brings a smile to your face and warmth to your soul, reminding you that you are loved beyond measure.
+
+Thank you for being the love of my life, my forever and always. Here’s to countless moments of laughter, shared dreams, and a love that grows stronger with each passing day. I love you more than words can express, now and forever.
+      </p>
+    </div>
+
+    <div class="section" id="audio">
+      <h3>🔊 A Voice from My Heart</h3>
+      <div class="audio-player">
+        <audio id="mainAudio" controls>
+          <source src="jxx/audio1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <div class="section" id="video">
+      <h3>🎥 A Video Just for Us</h3>
+      <video id="myVideo" width="560" height="315" controls muted>
+        <source src="jxx/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="section" id="gallery">
+      <h3>📸 Our Memories Together</h3>
+      <div class="gallery">
+        <img src="jxx/anime1.jpg" alt="Memory 1">
+        <img src="jxx/anime2.jpg" alt="Memory 2">
+        <img src="jxx/anime3.jpg" alt="Memory 3">
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎵 JavaScript Logic -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const bgMusic = document.getElementById("backgroundMusic");
+      const mainAudio = document.getElementById("mainAudio");
+      const video = document.getElementById("myVideo");
+      video.muted = true;
+
+      // Set initial volume
+      bgMusic.volume = 0.5;
+
+      // Enable background music after first user interaction (autoplay policy)
+      function startBgMusic() {
+        bgMusic.play().catch(() => {});
+        window.removeEventListener('click', startBgMusic);
+        window.removeEventListener('touchstart', startBgMusic);
+      }
+      window.addEventListener('click', startBgMusic);
+      window.addEventListener('touchstart', startBgMusic);
+
+      // Lower background music when main audio or video plays
+      function lowerMusic() {
+        bgMusic.volume = 0.1;
+      }
+
+      function restoreMusic() {
+        bgMusic.volume = 0.5;
+      }
+
+      // Attach events
+      mainAudio.addEventListener('play', lowerMusic);
+      mainAudio.addEventListener('pause', restoreMusic);
+      mainAudio.addEventListener('ended', restoreMusic);
+
+      //video.addEventListener('play', lowerMusic);
+     // video.addEventListener('pause', restoreMusic);
+      //video.addEventListener('ended', restoreMusic);
+    });
+  </script>
+</body>
+</html>
